@@ -1,0 +1,100 @@
+<app-navbar>
+
+
+
+<div class="content">
+  <div class="profil-photo">
+<img [src]="profilForm.get('photo')?.value || 'assets/images/mentor1.svg'" alt="Profil photo of a person"
+     height="100" width="100" />
+      height="100" width="100" />
+    <div class="btn-modifier">
+      <button class="btn btn-primary" (click)="onModifyPhoto()">Modifier la photo</button>
+      <button class="btn btn-secondary" (click)="onDeletePhoto()">Supprimer la photo</button>
+    </div>
+  </div>
+
+  <h3>Information profil</h3>
+<form [formGroup]="profilForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label" for="name">Nom complet</label>
+        <input class="form-control" id="name" [(ngModel)]="mentor.name" formControlName="name" type="text" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="nom">Nom</label>
+        <input class="form-control" id="nom" [(ngModel)]="mentor.titre" formControlName="nom" type="text" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label" for="email">Adresse email</label>
+        <input class="form-control" id="email" [(ngModel)]="mentor.email" formControlName="email" type="email" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="experience">Année d'expérience</label>
+        <input class="form-control" id="experience" [(ngModel)]="mentor.experience" formControlName="experience"
+          type="text" />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="biographie">Biographie</label>
+      <textarea class="form-control" id="biographie" [(ngModel)]="mentor.biographie" formControlName="biographie"
+        rows="5"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label" for="parcours_academique">Parcours Académique</label>
+        <input class="form-control" id="parcours_academique" [(ngModel)]="mentor.parcours_academique"
+          formControlName="parcours_academique" type="text" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="diplome">Diplôme</label>
+        <input class="form-control" id="diplome" [(ngModel)]="mentor.diplome" formControlName="diplome" type="text" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label" for="langue">Langue</label>
+        <input class="form-control" id="langue" [(ngModel)]="mentor.langue" formControlName="langue" type="text" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="domaine">Domaine</label>
+        <input class="form-control" id="domaine" [(ngModel)]="mentor.domaine" formControlName="domaine" type="text" />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="cv">CV</label>
+      <input class="form-control" id="cv" [(ngModel)]="mentor.cv" formControlName="cv" type="text" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="formation_id">Formation</label>
+      <select class="form-control" id="formation_id" formControlName="formation_id">
+        <option *ngFor="let formation of formations" [value]="formation.id">{{ formation.name }}</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="password">Modifier mot de passe</label>
+      <input class="form-control" id="password" [(ngModel)]="mentor.password" formControlName="password"
+        type="password" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Enregistrer</button>
+    <button class="btn btn-secondary" type="button" (click)="onCancel()">Annuler</button>
+  </form>
+</div>
+
+
+
+
+
+<!-- binding -->
+
