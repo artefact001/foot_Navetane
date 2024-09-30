@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { CanActivate, Router } from '@angular/router'
 import {TirageService} from '../services/tirage.service'
+
 @Injectable({
   providedIn: 'root'
 })

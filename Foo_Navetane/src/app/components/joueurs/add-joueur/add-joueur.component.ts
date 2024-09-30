@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { JoueurService } from '../../services/joueur.service';
-
+import { JoueurService } from '../../../services/joueur.service';
 @Component({
   selector: 'app-add-joueur',
   standalone: true,
@@ -20,7 +19,7 @@ export class AddJoueurComponent {
     this.joueurForm = this.fb.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
-      poste: ['', Validators.required],
+      licenceId: ['', Validators.required],
       age: ['', Validators.required],
       equipeId: ['', Validators.required],
     });

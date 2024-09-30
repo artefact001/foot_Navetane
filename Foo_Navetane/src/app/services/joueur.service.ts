@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { Joueur } from '../models/joueur.model'
-
+import { Joueur } from '../models/JoueurModel'
 @Injectable({
   providedIn: 'root'
 })

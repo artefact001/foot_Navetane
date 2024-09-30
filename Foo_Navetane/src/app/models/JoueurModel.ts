@@ -2,7 +2,7 @@ export interface Joueur {
   id: number
   nom: string
   prenom: string
-  poste: string
+  LicenceId: number
   age: number
   equipeId: number
 }
