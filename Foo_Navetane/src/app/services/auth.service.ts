@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core'
   providedIn: 'root'
 })
 export class AuthService {
+  isAdmin: any
+  isZone : any
+  isEquipe : any
   constructor () {}
 
   isLoggedIn (): boolean {

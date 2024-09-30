@@ -9,7 +9,7 @@ export class ZoneGuard implements CanActivate {
   constructor (private authService: AuthService, private router: Router) {}
 
   canActivate (): boolean {
-    if (this.authService.isUserInZone()) {
+    if (this.authService.isZone()) {
       // Implémentation isUserInZone dans AuthService
       return true
     } else {

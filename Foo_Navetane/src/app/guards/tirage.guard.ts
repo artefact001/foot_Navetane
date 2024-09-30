@@ -6,10 +6,10 @@ import { TirageService } from '../services/tirage.service'
   providedIn: 'root'
 })
 export class TirageGuard implements CanActivate {
-  constructor (private tirageService: TirageService, private router: Router) {}
+  constructor (private TirageService: TirageService, private router: Router) {}
 
   canActivate (): boolean {
-    if (this.tirageService.isAuthorizedForTirage()) {
+    if (this.TirageService.isAuthorizedForTirage()) {
       return true
     } else {
       this.router.navigate(['/unauthorized'])
