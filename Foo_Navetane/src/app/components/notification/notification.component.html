@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Notifications</h2>
+  <ul class="list-group">
+    <li *ngFor="let notification of notifications" class="list-group-item">
+      <strong>Message:</strong> {{ notification.message }} <br>
+      <strong>Date envoyée:</strong> {{ notification.dateEnvoyee }} <br>
+      <strong>Destinataire:</strong> {{ notification.utilisateurDestinataire?.nom }}
+    </li>
+  </ul>
+</div>

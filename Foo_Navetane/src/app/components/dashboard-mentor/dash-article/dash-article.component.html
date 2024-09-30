@@ -1,0 +1,19 @@
+<app-sidebar></app-sidebar>
+<nav class="navbar"></nav>
+<div class="content">
+  <a routerLink="/creer-article" class="btn">Créer une nouvelle article</a>
+  <div class="article-container">
+    <div class="article-card" *ngFor="let article of articles">
+      <div class="article-title">{{ article.titre }}</div>
+      <div class="article-meta">
+        <span class="author">{{ article.user_id }}</span> |
+        <span class="category">{{ article.formation_id }}</span>
+      </div>
+      <img [src]="article.image" alt="{{ article.titre }}" class="article-image"/>
+
+      <div class="article-text">{{ article.description | slice:0:100 }}...</div>
+      <button class="edit-button" (click)="editArticle(article.id)">Modifier l'article</button>
+      <button class="delete-button" (click)="deleteArticle(article.id)">Supprimer l'article</button>
+    </div>
+  </div>
+</div>
