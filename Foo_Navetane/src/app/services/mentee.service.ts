@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { apiUrl } from './apiUrl';
 import { CommentaireModel } from '../models/CommentaireModel';
-import { ReservationModel } from '../models/ReservationModel';
+import { ReservationModel } from '../models/StatistiquematcheModel';
 @Injectable({
   providedIn: 'root'
 })
