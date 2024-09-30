@@ -1,9 +1,5 @@
 import { Injectable, inject } from '@angular/core'
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders
-} from '@angular/common/http'
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 import { apiUrl } from './apiUrl'

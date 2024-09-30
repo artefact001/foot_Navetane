@@ -35,11 +35,6 @@ import { ListMatchComponent } from './components/matchs/list-match/list-match.co
 import { AddMatchComponent } from './components/matchs/add-match/add-match.component'
 import { EditMatchComponent } from './components/matchs/edit-match/edit-match.component'
 import { ViewMatchComponent } from './components/matchs/view-match/view-match.component'
-import {AdminComponent} from './components/admin/admin.component'
-import { JoueurComponent } from './components/joueur/joueur.component'
-import { SessionComponent } from './components/session/session.component'
-import { LicenceComponent } from './components/licence/licence.component'
-import { TirageComponent } from './components/tirage/tirage.component'
 import { AuthGuard } from './guards/auth.guard'
 import { RoleGuard } from './guards/role.guard'
 import { SessionGuard } from './guards/session.guard'
@@ -98,19 +93,18 @@ export const routes: Routes = [
   
   
   {
-    path: 'admin',component: AdminComponent,
-    canActivate: [AdminGuard] // Seulement pour les administrateurs
+    path: 'admin',component: listadminComponent, canActivate: [AdminGuard] // Seulement pour les administrateurs
+    
   },
   
    {
     path: 'zone',
-    component: ZoneComponent,
-    canActivate: [ZoneGuard] // Seulement pour les utilisateurs des zones
+    component: addZoneComponent, canActivate: [ZoneGuard] // Seulement pour les utilisateurs des zones
   },
+  
   {
     path: 'equipe',
-    component: EquipeComponent,
-    canActivate: [EquipeGuard] // Seulement pour les utilisateurs des équipes
+    component: addEquipeComponent, canActivate: [EquipeGuard] // Seulement pour les utilisateurs des équipes
   },
   {
     path: '**',
@@ -118,35 +112,35 @@ export const routes: Routes = [
   },
   
   
-  {
-    path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthGuard, RoleGuard],
-    data: { expectedRole: 'admin' }
-  },
+ {
+  path: 'admin',
+  component: listAdminComponent,
+  canActivate: [AuthGuard, RoleGuard],
+  data: { expectedRole: 'admin' }
+},
+
   {
     path: 'joueur',
-    component: JoueurComponent,
+    component: addJoueurComponent,
     canActivate: [AuthGuard, RoleGuard],
     data: { expectedRole: 'joueur' }
   },
   {
     path: 'session/:id',
-    component: SessionComponent,
+    component: addSessionComponent,
     canActivate: [AuthGuard, SessionGuard]
   },
   {
     path: 'licence-required',
-    component: LicenceComponent,
+    component: addLicenceComponent,
     canActivate: [AuthGuard, LicenceGuard]
   },
   {
     path: 'tirage',
-    component: TirageComponent,
+    component: addTirageComponent,
     canActivate: [AuthGuard, TirageGuard]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
       ];
 
-// import { AccueilComponent } from './components/accueil/accueil.component'
 
