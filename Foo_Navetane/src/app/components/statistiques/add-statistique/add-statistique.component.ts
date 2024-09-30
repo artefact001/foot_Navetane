@@ -1,8 +1,7 @@
 import { Component } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
-import { StatistiqueService } from '../../services/statistique.service'
-
+import { StatistiqueService } from '../../../services/statistique.service'
 @Component({
   selector: 'app-add-statistique',
   standalone: true,
@@ -22,7 +21,8 @@ export class AddStatistiqueComponent {
       equipeId: ['', Validators.required],
       possession: ['', Validators.required],
       tirs: ['', Validators.required],
-      passes: ['', Validators.required]
+      passes: ['', Validators.required],
+      buts: ['', Validators.required]
     })
   }
 

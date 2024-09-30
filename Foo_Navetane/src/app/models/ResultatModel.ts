@@ -1,4 +1,4 @@
-export interface Statistique {
+export interface Resultat {
   id: number
   matchId: number
   equipeId: number
