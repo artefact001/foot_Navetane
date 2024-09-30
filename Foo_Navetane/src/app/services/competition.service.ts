@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { Competition } from '../models/competition.model'
-
+import { Competition } from '../models/CompetitionModel'
 @Injectable({
   providedIn: 'root'
 })

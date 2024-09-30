@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { Phase } from '../models/phase.model'
+import { Phase } from '../models/PhaseModel'
 
 @Injectable({
   providedIn: 'root'

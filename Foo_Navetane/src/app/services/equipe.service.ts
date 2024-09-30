@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { Equipe } from '../models/equipe.model'
-
+import { Equipe } from '../models/EquipeModel'
 @Injectable({
   providedIn: 'root'
 })
-export class EquipeService {
+export class equipeService {
   private apiUrl = 'http://localhost:3000/equipes'
 
   constructor (private http: HttpClient) {}

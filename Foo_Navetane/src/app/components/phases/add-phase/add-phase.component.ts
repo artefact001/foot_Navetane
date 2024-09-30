@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
-import { PhaseService } from '../../services/phase.service'
+import { PhaseService } from '../../../services/phase.service'
 
 @Component({
   selector: 'app-add-phase',

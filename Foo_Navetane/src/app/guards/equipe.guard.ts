@@ -9,7 +9,7 @@ export class EquipeGuard implements CanActivate {
   constructor (private authService: AuthService, private router: Router) {}
 
   canActivate (): boolean {
-    if (this.authService.isUserInEquipe()) {
+    if (this.authService.isEquipe()) {
       // Implémentation isUserInEquipe dans AuthService
       return true
     } else {

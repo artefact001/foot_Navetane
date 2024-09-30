@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { Match } from '../models/match.model'
+import { Match } from '../models/MatchModel'
 
 @Injectable({
   providedIn: 'root'

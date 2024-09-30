@@ -36,13 +36,10 @@ import { AddMatchComponent } from './components/matchs/add-match/add-match.compo
 import { EditMatchComponent } from './components/matchs/edit-match/edit-match.component'
 import { ViewMatchComponent } from './components/matchs/view-match/view-match.component'
 import { AuthGuard } from './guards/auth.guard'
-import { RoleGuard } from './guards/role.guard'
-import { SessionGuard } from './guards/session.guard'
-import { LicenceGuard } from './guards/licence.guard'
-import { TirageGuard } from './guards/tirage.guard'
 import { AdminGuard } from './guards/admin.guard'
 import { ZoneGuard } from './guards/zone.guard'
 import { EquipeGuard } from './guards/equipe.guard'
+import { AccueilComponent } from './components/accueil/accueil.component';
 
 export const routes: Routes = [
       // matchs
@@ -90,57 +87,27 @@ export const routes: Routes = [
   { path: 'joueurs/add', component: AddJoueurComponent },
   { path: 'joueurs/edit/:id', component: EditJoueurComponent },
   { path: 'joueurs/view/:id', component: ViewJoueurComponent },
+  { path: 'acceuil', component: AccueilComponent },
   
   
-  {
-    path: 'admin',component: listadminComponent, canActivate: [AdminGuard] // Seulement pour les administrateurs
+  // {
+  //   path: 'admin',component: listadminComponent, canActivate: [AdminGuard] // Seulement pour les administrateurs
     
-  },
+  // },
   
-   {
-    path: 'zone',
-    component: addZoneComponent, canActivate: [ZoneGuard] // Seulement pour les utilisateurs des zones
-  },
+  //  {
+  //   path: 'zone',
+  //   component: addZoneComponent, canActivate: [ZoneGuard] // Seulement pour les utilisateurs des zones
+  // },
   
-  {
-    path: 'equipe',
-    component: addEquipeComponent, canActivate: [EquipeGuard] // Seulement pour les utilisateurs des équipes
-  },
+ 
   {
     path: '**',
     redirectTo: 'home'
   },
   
-  
- {
-  path: 'admin',
-  component: listAdminComponent,
-  canActivate: [AuthGuard, RoleGuard],
-  data: { expectedRole: 'admin' }
-},
 
-  {
-    path: 'joueur',
-    component: addJoueurComponent,
-    canActivate: [AuthGuard, RoleGuard],
-    data: { expectedRole: 'joueur' }
-  },
-  {
-    path: 'session/:id',
-    component: addSessionComponent,
-    canActivate: [AuthGuard, SessionGuard]
-  },
-  {
-    path: 'licence-required',
-    component: addLicenceComponent,
-    canActivate: [AuthGuard, LicenceGuard]
-  },
-  {
-    path: 'tirage',
-    component: addTirageComponent,
-    canActivate: [AuthGuard, TirageGuard]
-  },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/acceuil', pathMatch: 'full' }
       ];
 
 

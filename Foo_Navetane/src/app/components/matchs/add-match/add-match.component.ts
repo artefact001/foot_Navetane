@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators , ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
-import { MatchService } from '../../services/match.service'
+import { MatchService } from '../../../services/match.service';
 
 @Component({
   selector: 'app-add-match',

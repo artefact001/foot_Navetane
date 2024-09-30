@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { zoneGuard } from './zone.guard';
+import { ZoneGuard } from './zone.guard';
 
 describe('zoneGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) => 

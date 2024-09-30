@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { Observable, of } from 'rxjs' // Ajoutez `of` ici
 import { catchError } from 'rxjs/operators'
 import { Role } from '../models/RoleModel' // Modèle de Role
 
