@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Historique des Actions</h2>
+  <ul class="list-group">
+    <li *ngFor="let historique of historiques" class="list-group-item">
+      <strong>Action:</strong> {{ historique.action }} <br>
+      <strong>Date d'action:</strong> {{ historique.date_action }}
+    </li>
+  </ul>
+</div>

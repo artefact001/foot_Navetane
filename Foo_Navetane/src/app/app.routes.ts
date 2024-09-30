@@ -90,6 +90,104 @@ import { ListCompetitionComponent } from './competitions/list-competition/list-c
 import { AddCompetitionComponent } from './competitions/add-competition/add-competition.component'
 import { EditCompetitionComponent } from './competitions/edit-competition/edit-competition.component'
 import { ViewCompetitionComponent } from './competitions/view-competition/view-competition.component'
+import { ListJoueurComponent } from './joueurs/list-joueur/list-joueur.component'
+import { AddJoueurComponent } from './joueurs/add-joueur/add-joueur.component'
+import { EditJoueurComponent } from './joueurs/edit-joueur/edit-joueur.component'
+import { ViewJoueurComponent } from './joueurs/view-joueur/view-joueur.component'
+import { ListMatchComponent } from './matchs/list-match/list-match.component'
+import { AddMatchComponent } from './matchs/add-match/add-match.component'
+import { EditMatchComponent } from './matchs/edit-match/edit-match.component'
+import { ViewMatchComponent } from './matchs/view-match/view-match.component'
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { AdminComponent } from './components/admin/admin.component'
+import { JoueurComponent } from './components/joueur/joueur.component'
+import { SessionComponent } from './components/session/session.component'
+import { LicenceComponent } from './components/licence/licence.component'
+import { TirageComponent } from './components/tirage/tirage.component'
+
+import { AuthGuard } from './guards/auth.guard'
+import { RoleGuard } from './guards/role.guard'
+import { SessionGuard } from './guards/session.guard'
+import { LicenceGuard } from './guards/licence.guard'
+import { TirageGuard } from './guards/tirage.guard'
+
+const routes: Routes = [
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { expectedRole: 'admin' }
+  },
+  {
+    path: 'joueur',
+    component: JoueurComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { expectedRole: 'joueur' }
+  },
+  {
+    path: 'session/:id',
+    component: SessionComponent,
+    canActivate: [AuthGuard, SessionGuard]
+  },
+  {
+    path: 'licence-required',
+    component: LicenceComponent,
+    canActivate: [AuthGuard, LicenceGuard]
+  },
+  {
+    path: 'tirage',
+    component: TirageComponent,
+    canActivate: [AuthGuard, TirageGuard]
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+]
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+// import { NgModule } from '@angular/core';
+
+import { AdminGuard } from './guards/admin.guard'
+import { ZoneGuard } from './guards/zone.guard'
+import { EquipeGuard } from './guards/equipe.guard'
+
+const routes: Routes = [
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AdminGuard] // Seulement pour les administrateurs
+  },
+  {
+    path: 'zone',
+    component: ZoneComponent,
+    canActivate: [ZoneGuard] // Seulement pour les utilisateurs des zones
+  },
+  {
+    path: 'equipe',
+    component: EquipeComponent,
+    canActivate: [EquipeGuard] // Seulement pour les utilisateurs des équipes
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
+]
+
+
+
+
+
+
+
+export const routes = [
+  { path: 'matchs', component: ListMatchComponent },
+  { path: 'matchs/add', component: AddMatchComponent },
+  { path: 'matchs/edit/:id', component: EditMatchComponent },
+  { path: 'matchs/view/:id', component: ViewMatchComponent }
+]
 
 
 export const routes: Routes = [
@@ -153,4 +251,13 @@ export const routes = [
   { path: 'calendriers/add', component: AddCalendrierComponent },
   { path: 'calendriers/edit/:id', component: EditCalendrierComponent },
   { path: 'calendriers/view/:id', component: ViewCalendrierComponent }
+]
+
+
+
+export const routes = [
+  { path: 'joueurs', component: ListJoueurComponent },
+  { path: 'joueurs/add', component: AddJoueurComponent },
+  { path: 'joueurs/edit/:id', component: EditJoueurComponent },
+  { path: 'joueurs/view/:id', component: ViewJoueurComponent }
 ]
