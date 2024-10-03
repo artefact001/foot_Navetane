@@ -20,10 +20,12 @@ export class AddUtilisateurComponent {
     private router: Router
   ) {
     this.utilisateurForm = this.fb.group({
-      nom: ['', Validators.required],
+      NomComplet: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       motDePasse: ['', Validators.required],
-      role: ['', Validators.required]
+      role: ['', Validators.required],
+      Adresse: ['', Validators.required],
+      Telephone: ['', Validators.required]
     })
   }
 

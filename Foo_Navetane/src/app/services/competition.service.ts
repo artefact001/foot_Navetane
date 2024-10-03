@@ -1,35 +1,35 @@
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Competition } from '../models/CompetitionModel'
+import { apiUrl } from './apiUrl';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CompetitionService {
-  private apiUrl = 'http://localhost:3000/competitions'
-
-  constructor (private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getCompetitions (): Observable<Competition[]> {
-    return this.http.get<Competition[]>(this.apiUrl)
+    return this.http.get<Competition[]>(apiUrl)
   }
 
   getCompetitionById (id: number): Observable<Competition> {
-    return this.http.get<Competition>(`${this.apiUrl}/${id}`)
+    return this.http.get<Competition>(`${apiUrl}/${id}`)
   }
 
   addCompetition (competition: Competition): Observable<Competition> {
-    return this.http.post<Competition>(this.apiUrl, competition)
+    return this.http.post<Competition>(apiUrl, competition)
   }
 
   updateCompetition (
     id: number,
     competition: Competition
   ): Observable<Competition> {
-    return this.http.put<Competition>(`${this.apiUrl}/${id}`, competition)
+    return this.http.put<Competition>(`${apiUrl}/${id}`, competition)
   }
 
   deleteCompetition (id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`)
+    return this.http.delete<void>(`${apiUrl}/${id}`)
   }
 }

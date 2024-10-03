@@ -2,7 +2,7 @@ body {
   font-family: 'Montserrat', 'regular';
   margin: 0;
   padding: 0;
-  background-color: #FFFFF0;
+  background-color: #f8f9fa;
   color: #333;
   display: flex;
 }
@@ -11,7 +11,7 @@ body {
   position: fixed;
   width: 220px;
   height: 100%;
-  background-color: #FFFFF0;
+  background-color: #1D2951;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -20,7 +20,7 @@ body {
 
 #tableau_de_bord {
   background-color: #5C0C69;
-  color: #FFFFF0;
+  color: #1D2951;
   padding: 10px 0 10px 0;
   border-radius: 0 30px 30px 0;
 }

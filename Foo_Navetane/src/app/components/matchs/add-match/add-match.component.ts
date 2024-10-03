@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators , ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
-import { MatchService } from '../../../services/match.service';
+import { MatcheService } from ' ../../../services/MatcheService' ;
 
 @Component({
   selector: 'app-add-match',
@@ -14,7 +14,7 @@ export class AddMatchComponent {
 
   constructor (
     private fb: FormBuilder,
-    private matchService: MatchService,
+    private matcheService: MatcheService,
     private router: Router
   ) {
     this.matchForm = this.fb.group({
@@ -27,9 +27,9 @@ export class AddMatchComponent {
   }
 
   onSubmit () {
-    if (this.matchForm.valid) {
-      this.matchService.addMatch(this.matchForm.value).subscribe(() => {
-        this.router.navigate(['/matchs'])
+    if (this.matcheForm.valid) {
+      this.matcheService.addMatche(this.matcheForm.value).subscribe(() => {
+        this.router.navigate(['/matches'])
       })
     }
   }
