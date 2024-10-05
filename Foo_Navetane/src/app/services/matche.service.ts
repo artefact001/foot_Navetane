@@ -1,38 +1,33 @@
-import { Injectable , inject } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
-import { matche } from '../models/matcheModel'
-import { apiUrl } from './apiUrl';
-
+// src/app/services/match.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-// export class matcheService {
-//   private apiUrl = 'http://localhost:3000/matches'
+export class MatchService {
+  private apiUrl = 'http://your-laravel-api-url/api';
 
-  export class matcheService {
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) {}
 
-  // constructor (private http: HttpClient) {}
-
-  getmatches (): Observable<matche[]> {
-    return this.http.get<matche[]>(`${apiUrl}/matches`)
+  getAllMatches(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/matches`);
   }
 
-  getmatcheById (id: number): Observable<matche> {
-    return this.http.get<matche>(`${apiUrl}/matches/${id}`)
+  getMatchById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/matches/${id}`);
   }
 
-  addmatche (matche: matche): Observable<matche> {
-    return this.http.post<matche>(`${apiUrl}/matches`, matche)
+  createMatch(matchData: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/matches`, matchData);
   }
 
-  updatematche (id: number, matche: matche): Observable<matche> {
-    return this.http.put<matche>(`${apiUrl}/matches/${id}`, matche)
+  updateMatch(id: number, matchData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/matches/${id}`, matchData);
   }
 
-  deletematche (id: number): Observable<void> {
-    return this.http.delete<void>(`${apiUrl}/matches/${id}`)
+  deleteMatch(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/matches/${id}`);
   }
 }

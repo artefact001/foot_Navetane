@@ -6,15 +6,17 @@ import { CalendrierService } from '../../../services/calendrier.service'
   selector: 'app-add-calendrier',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './add-calendrier.component.html'
+  templateUrl: './add-calendrier.component.html',
+ styleUrl: './add-calendrier.component.css'
+
 })
 export class AddCalendrierComponent {
   calendrierForm: FormGroup
 
   constructor (
-    private fb: FormBuilder,
-    private calendrierService: CalendrierService,
-    private router: Router
+    public fb: FormBuilder,
+    public calendrierService: CalendrierService,
+    public router: Router
   ) {
     this.calendrierForm = this.fb.group({
       matchId: ['', Validators.required],

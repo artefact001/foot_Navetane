@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenteurComponent } from './menteur.component';
+import { ViewMatcheComponent } from './view-matche.component';
 
-describe('MenteurComponent', () => {
-  let component: MenteurComponent;
-  let fixture: ComponentFixture<MenteurComponent>;
+describe('ViewMatcheComponent', () => {
+  let component: ViewMatcheComponent;
+  let fixture: ComponentFixture<ViewMatcheComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MenteurComponent]
+      imports: [ViewMatcheComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(MenteurComponent);
+
+    fixture = TestBed.createComponent(ViewMatcheComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

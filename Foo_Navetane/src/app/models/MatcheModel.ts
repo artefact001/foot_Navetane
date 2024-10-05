@@ -1,4 +1,4 @@
-export interface Match {
+export interface Matche {
   id: number
   equipe1Id: number
   equipe2Id: number
