@@ -1,0 +1,28 @@
+/* Custom styles for the form and table */
+.table-container {
+  margin-top: 30px;
+}
+
+.table-bordered {
+  border: 2px solid #343a40;
+}
+
+.table-dark {
+  background-color: #343a40;
+  color: white;
+}
+
+i {
+  cursor: pointer;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+i:hover {
+  color: #0056b3;
+}
+
+.btn-primary {
+  background-color: #1d2e63;
+  border-color: #1d2e63;
+}

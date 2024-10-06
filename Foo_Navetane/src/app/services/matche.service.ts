@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MatchService {
+export class MatcheService {
   private apiUrl = 'http://your-laravel-api-url/api';
 
   constructor(private http: HttpClient) {}
@@ -19,15 +19,15 @@ export class MatchService {
     return this.http.get<any>(`${this.apiUrl}/matches/${id}`);
   }
 
-  createMatch(matchData: any): Observable<any> {
+  createMatche(matchData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/matches`, matchData);
   }
 
-  updateMatch(id: number, matchData: any): Observable<any> {
+  updateMatche(id: number, matchData: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/matches/${id}`, matchData);
   }
 
-  deleteMatch(id: number): Observable<any> {
+  deleteMatche(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/matches/${id}`);
   }
 }

@@ -1,61 +1,71 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { MatchService } from '../../../services/match.service'
+import { Component, OnInit } from '@angular/core'
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule
+} from '@angular/forms'
+import { Router } from '@angular/router'
+import { CommonModule } from '@angular/common' // Add CommonModule for ngFor
+import { MatcheService } from '../../../services/matche.service'
+// import { MatcheService } from '../../../services/matche.service' // Ensure correct import for matcheService
 
-@Component({ 
+@Component({
   selector: 'app-add-matche',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './add-matche.component.html',
-  StyleUrl: './add-matche.component.css'
+  styleUrls: ['./add-matche.component.css'] // Fixed the typo
 })
 export class AddMatchComponent implements OnInit {
-  matcheForm: FormGroup;
-  matches: any[] = []; // Assurez-vous d'importer le type correct
+  matcheForm: FormGroup
+  matches: any[] = []
 
   constructor (
     private fb: FormBuilder,
-    private matcheService: MatcheService,
+    private matcheService: MatcheService, // Ensure the correct service is injected
     private router: Router
   ) {
+    console.log('AddMatchComponent constructor')
     this.matcheForm = this.fb.group({
       equipe1Id: ['', Validators.required],
       equipe2Id: ['', Validators.required],
       date: ['', Validators.required],
       scoreEquipe1: ['', Validators.required],
       scoreEquipe2: ['', Validators.required]
-    });
+    })
   }
 
-  ngOnInit(): void {
-    this.loadMatches();
+  ngOnInit (): void {
+    this.loadMatches()
   }
 
-  loadMatches(): void {
-    this.matcheService.getMatches().subscribe(data => {
-      this.matches = data; // Assurez-vous que le service retourne la liste des matches
-    });
+  loadMatches (): void {
+    this.matcheService.getAllMatches().subscribe(data => {
+      this.matches = data
+    })
   }
 
-  onSubmit(): void {
+  onSubmit (): void {
     if (this.matcheForm.valid) {
-      this.matcheService.addMatche(this.matcheForm.value).subscribe(() => {
-        this.loadMatches(); // Rechargez la liste des matches après ajout
-        this.matcheForm.reset(); // Réinitialiser le formulaire
-      });
+      this.matcheService.createMatche(this.matcheForm.value).subscribe(() => {
+        this.loadMatches() // Reload the list after adding
+        this.matcheForm.reset() // Reset the form after submission
+      })
     }
   }
 
-  viewMatch(id: number): void {
-    // Implémentez la logique pour afficher les détails du match
+  viewMatch (id: number): void {
+    this.router.navigate([`/matches/view/${id}`]) // Assuming route exists
   }
 
-  editMatch(id: number): void {
-    // Implémentez la logique pour éditer le match
+  editMatch (id: number): void {
+    this.router.navigate([`/matches/edit/${id}`]) // Assuming route exists
   }
 
-  deleteMatch(id: number): void {
-    // Implémentez la logique pour supprimer le match
+  deleteMatch (id: number): void {
+    this.matcheService.deleteMatche(id).subscribe(() => {
+      this.loadMatches() // Reload the list after deletion
+    })
   }
 }

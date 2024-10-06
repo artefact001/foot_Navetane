@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticleMentorComponent } from './article-mentor.component';
+import { ViewReclamationComponent } from './view-reclamation.component';
 
-describe('ArticleMentorComponent', () => {
-  let component: ArticleMentorComponent;
-  let fixture: ComponentFixture<ArticleMentorComponent>;
+describe('ViewReclamationComponent', () => {
+  let component: ViewReclamationComponent;
+  let fixture: ComponentFixture<ViewReclamationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArticleMentorComponent]
+      imports: [ViewReclamationComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(ArticleMentorComponent);
+
+    fixture = TestBed.createComponent(ViewReclamationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
