@@ -32,14 +32,14 @@
       </div>
 
       <div class="table-container">
-        <h2>Demandes de mentorat</h2>
+        <h2>utilisateurs</h2>
 
         <table>
           <thead>
             <tr>
-              <th>Nom Complet</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Mot de passe</th>
+              <th>password</th>
               <th> Rôle</th>
               <th>Adresse</th>
               <th>Téléphone</th>
@@ -102,67 +102,6 @@
             <!-- Autres lignes -->
 
 
-            <!-- Button trigger modal
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">
-              Ajouter un utilisateur
-            </button> <br>
-            <br>
-
-            <!-- Modal -->
-            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="userModalLabel">Ajouter un utilisateur</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <!-- Formulaire Utilisateur -->
-                    <form>
-                      <div class="row mb-3">
-                        <div class="col-md-6">
-                          <label for="nom" class="form-label">Nom</label>
-                          <input type="text" class="form-control" id="nom" placeholder="Nom">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col-md-6">
-                          <label for="password" class="form-label">Mot de passe</label>
-                          <input type="password" class="form-control" id="password" placeholder="Mot de passe">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="role" class="form-label">Rôle</label>
-                          <select class="form-select" id="role">
-                            <option selected>Choisir...</option>
-                            <option value="admin">Zone</option>
-                            <option value="user">Equipe</option>
-                            <option value="editor">Autres</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="mb-3">
-                        <label for="address" class="form-label">Adresse</label>
-                        <input type="text" class="form-control" id="address" placeholder="Dakar/Guediawaye/Sam_Notaire">
-                      </div>
-                      <div class="mb-3">
-                        <label for="telephone" class="form-label">Téléphone</label>
-                        <input type="tel" class="form-control" id="telephone" placeholder="Téléphone">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Enregistrer</button>
-                    </form>
-                    <!-- Fin Formulaire Utilisateur -->
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
@@ -198,10 +137,9 @@
             <label for="role">Rôle</label>
             <select id="role" formControlName="role" class="form-select">
               <option value="admin">Admin</option>
-              <option value="moderateur">Modérateur</option>
-              <option value="utilisateur">Utilisateur</option>
-              <option value="editeur">Éditeur</option>
-              <option value="invité">Invité</option>
+              <option value="Zone">Zone</option>
+              <option value="Equipe">Equipe</option>
+              <option value="editeur">Autres</option>
             </select>
           </div>
         </form>

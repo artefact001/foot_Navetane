@@ -3,13 +3,15 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
+import { apiUrl } from './apiUrl' // Import the base URL for your API
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationsService {
-  private apiUrl = 'http://127.0.0.1:8181/api';
+  private apiUrl = `${apiUrl}/notifications
+/api`
 
   constructor(private http: HttpClient) { }
 

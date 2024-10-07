@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router'
 // Importation des composants
-// import { HomeComponent } from './components/home/home.component';
-// import { ListMatcheComponent } from './components/matches/list-matche/list-matche.component';
-// import { AddMatcheComponent } from './components/matches/add-matche/add-matche.component';
-// import { EditMatcheComponent } from './components/matches/edit-matche/edit-matche.component';
-// import { MatcheViewComponent } from './components/matches/view-matche/matche-view.component';
+// import { ListMatcheComponent } from './components/matchs/list-matche/list-matche.component';
+// import { AddMatcheComponent } from './components/matchs/add-matche/add-matche.component';
+// import { EditMatcheComponent } from './components/matchs/edit-matche/edit-matche.component';
+// import { MatcheViewComponent } from './components/matchs/view-matche/view-matche.component';
 
 import { ListReclamationComponent } from './components/reclamations/list-reclamation/list-reclamation.component';
 import { AddReclamationComponent } from './components/reclamations/add-reclamation/add-reclamation.component';
@@ -36,6 +35,7 @@ import { ListPhaseComponent } from './components/phases/list-phase/list-phase.co
 import { AddPhaseComponent } from './components/phases/add-phase/add-phase.component';
 import { EditPhaseComponent } from './components/phases/edit-phase/edit-phase.component';
 import { ViewPhaseComponent } from './components/phases/view-phase/view-phase.component';
+import { AccueilComponent } from './components/accueil/accueil.component';
 
 // Définition des routes
 
@@ -43,13 +43,13 @@ export const routes: Routes = [
 
 // const routes: Routes = [
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
-  // { path: 'acceuil', component: HomeComponent },
+  { path: 'acceuil', component: AccueilComponent },
 
   // Routes pour les matches
-  { path: 'matches', component: ListMatcheComponent },
-  { path: 'matches/add', component: AddMatcheComponent },
-  { path: 'matches/edit/:id', component: EditMatcheComponent },
-  { path: 'matches/view/:id', component: MatcheViewComponent },
+  // { path: 'matches', component: ListMatcheComponent },
+  // { path: 'matches/add', component: AddMatcheComponent },
+  // { path: 'matches/edit/:id', component: EditMatcheComponent },
+  // { path: 'matches/view/:id', component: MatcheViewComponent },
 
   // Routes pour les réclamations
   { path: 'reclamations', component: ListReclamationComponent },

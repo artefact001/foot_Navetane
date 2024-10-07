@@ -7,15 +7,18 @@ import { apiUrl } from './apiUrl';
 @Injectable({
   providedIn: 'root'
 })
-// export class UtilisateurService {
-//   private apiUrl = 'http://localhost:3000/utilisateurs'
+// export class utilisateurService {
+//   private apiUrl = 'http://localhost:8000/utilisateurs'
 
 
-  // constructor (private http: HttpClient) {}
-  
-    
-       export class UtilisateurService {
-  private http = inject(HttpClient);
+export class utilisateurService
+ {
+  // Define the API URL for reclamations
+  private apiUrl = `${apiUrl}/utilisateurs/api`
+
+    constructor (private http: HttpClient) {}
+
+
 
   getUtilisateurs (): Observable<Utilisateur[]> {
     return this.http.get<Utilisateur[]>(apiUrl)

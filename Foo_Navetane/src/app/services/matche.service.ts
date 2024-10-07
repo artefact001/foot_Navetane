@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MatcheService {
-  private apiUrl = 'http://your-laravel-api-url/api';
+    private apiUrl = 'http://127.0.0.1:8000/matches/api';
+
 
   constructor(private http: HttpClient) {}
 
