@@ -15,10 +15,10 @@ import { AddStatistiqueComponent } from './components/statistiques/add-statistiq
 import { EditStatistiqueComponent } from './components/statistiques/edit-statistique/edit-statistique.component';
 import { ViewStatistiqueComponent } from './components/statistiques/view-statistique/view-statistique.component';
 
-import { ListUtilisateurComponent } from './components/utilisateurs/list-utilisateur/list-utilisateur.component';
-import { AddUtilisateurComponent } from './components/utilisateurs/add-utilisateur/add-utilisateur.component';
-import { EditUtilisateurComponent } from './components/utilisateurs/edit-utilisateur/edit-utilisateur.component';
-import { ViewUtilisateurComponent } from './components/utilisateurs/view-utilisateur/view-utilisateur.component';
+// import { ListUtilisateurComponent } from './components/utilisateurs/list-utilisateur/list-utilisateur.component';
+// import { AddUtilisateurComponent } from './components/utilisateurs/add-utilisateur/add-utilisateur.component';
+// import { EditUtilisateurComponent } from './components/utilisateurs/edit-utilisateur/edit-utilisateur.component';
+// import { ViewUtilisateurComponent } from './components/utilisateurs/view-utilisateur/view-utilisateur.component';
 import { ListCompetitionComponent } from './components/competitions/list-competition/list-competition.component';
 import { AddCompetitionComponent } from './components/competitions/add-competition/add-competition.component';
 import { EditCompetitionComponent } from './components/competitions/edit-competition/edit-competition.component';
@@ -36,6 +36,7 @@ import { AddPhaseComponent } from './components/phases/add-phase/add-phase.compo
 import { EditPhaseComponent } from './components/phases/edit-phase/edit-phase.component';
 import { ViewPhaseComponent } from './components/phases/view-phase/view-phase.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { AddUtilisateurComponent } from './components/ajout/ajout.component';
 
 // Définition des routes
 
@@ -51,6 +52,8 @@ export const routes: Routes = [
   // { path: 'matches/edit/:id', component: EditMatcheComponent },
   // { path: 'matches/view/:id', component: MatcheViewComponent },
 
+{path: 'ajout', component: AddUtilisateurComponent},
+
   // Routes pour les réclamations
   { path: 'reclamations', component: ListReclamationComponent },
   { path: 'reclamations/add', component: AddReclamationComponent },
@@ -64,10 +67,10 @@ export const routes: Routes = [
   { path: 'statistiques/view/:id', component: ViewStatistiqueComponent },
 
 
-    { path: 'utilisateurs', component: ListUtilisateurComponent },
-  { path: 'utilisateurs/add', component: AddUtilisateurComponent },
-  { path: 'utilisateurs/edit/:id', component: EditUtilisateurComponent },
-  { path: 'utilisateurs/view/:id', component: ViewUtilisateurComponent },
+  //   { path: 'utilisateurs', component: ListUtilisateurComponent },
+  // { path: 'utilisateurs/add', component: AddUtilisateurComponent },
+  // { path: 'utilisateurs/edit/:id', component: EditUtilisateurComponent },
+  // { path: 'utilisateurs/view/:id', component: ViewUtilisateurComponent },
 
   { path: 'competitions', component: ListCompetitionComponent },
   { path: 'competitions/add', component: AddCompetitionComponent },
